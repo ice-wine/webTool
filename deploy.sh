@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 填写你刚刚创建的仓库地址
-git push -f https://github.com/ice-wine/webTool.git master
+git push -f https://github.com/ice-wine/ice-wine.github.io.git master
 
 cd -
