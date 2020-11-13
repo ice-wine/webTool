@@ -20,4 +20,4 @@ git log
 
 ### 汇总
 
-![An image](./imgs/git-code.jpg)
+<img :src="$withBase('/imgs/git-code.jpg')" alt="git-code">

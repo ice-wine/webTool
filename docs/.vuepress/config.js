@@ -1,6 +1,5 @@
 module.exports = {
     title: 'Web',
-    base: '/webTool/', // 部署到GitHubç
     themeConfig: {
         nav: [{
                 text: '基础',
