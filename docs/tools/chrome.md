@@ -1,6 +1,7 @@
 # chrome调试
 
 ## console
+
 ### 基本输出
 
 ```js
@@ -51,21 +52,23 @@
  console.groupEnd("end");
 ```
 
-
 ### 函数计数和跟踪
+
 ```js
  console.count("调用次数")；// 放在函数里，每当这句代码运行输出所在函数执行次数
  console.trace()；//显示函数调用轨迹(访问调用栈）
 ```
 
 ### 计时
+
 ```js
  console.time() //计时开始
  fun(); //调用函数
  console.timeEnd() //计时结束并输出时长
 ```
+
 ## Source 断点
 
-Source内容区设置断点 
+Source内容区设置断点
 
 ## debugger

@@ -20,19 +20,19 @@ module.exports = {
                     text: 'CSS相关',
                     items: [{
                         text: 'Less & Sass',
-                        link: '/index/'
+                        link: '/advanced/css/less&sass'
                     }, {
                         text: 'Flex',
-                        link: '/index/'
+                        link: '/advanced/css/flex'
                     }]
                 }, {
                     text: 'JS相关',
                     items: [{
                         text: 'ES',
-                        link: '/index/'
+                        link: '/advanced/js/es'
                     }, {
                         text: 'TS',
-                        link: '/index/'
+                        link: '/advanced/js/ts'
                     }]
                 }]
             },
@@ -40,30 +40,30 @@ module.exports = {
                 text: '库&框架',
                 items: [{
                     text: 'Vue',
-                    link: '/index/'
+                    link: '/frame/vue'
                 }, {
                     text: 'React',
-                    link: '/index/'
+                    link: '/frame/react'
                 }, {
                     text: 'NodeJs',
-                    link: '/index/'
+                    link: '/frame/nodeJs'
                 }, {
                     text: '移动端',
-                    link: '/index/'
+                    link: '/frame/mobile'
                 }, {
                     text: '微信小程序',
-                    link: '/index/'
+                    link: '/frame/wechatApp'
                 }, {
                     text: 'UI相关',
                     items: [{
                         text: 'Element-ui',
-                        link: '/index/'
+                        link: '/frame/ui/element-ui'
                     }, {
                         text: 'Vant',
-                        link: '/index/'
+                        link: '/frame/ui/vant'
                     }, {
                         text: 'AntD',
-                        link: '/index/'
+                        link: '/frame/ui/antd'
                     }]
                 }]
             },
@@ -90,42 +90,68 @@ module.exports = {
                 }, {
                     text: '前端进阶',
                     items: [{
-                        text: '前端安全',
+                        text: '微前端',
                         link: '/index/'
                     }, {
-                        text: '前端监控',
+                        text: '安全',
                         link: '/index/'
                     }, {
-                        text: '前端规范',
+                        text: '监控&埋点',
                         link: '/index/'
+                    }, {
+                        text: '缓存',
+                        link: 'https://juejin.cn/post/6844904069178507278'
                     }]
                 }, {
                     text: '其他',
                     items: [{
+                        text: '前端规范',
+                        link: '/index/'
+                    }, {
+                        text: '前端调试',
+                        link: '/index/'
+                    }, {
                         text: 'Serverless',
+                        link: '/index/'
+                    }, {
+                        text: '源码指引',
                         link: '/index/'
                     }]
                 }]
-            }, {
+            },
+            {
                 text: '经验',
                 items: [{
                     text: '开发技巧',
                     items: [{
+                        text: 'HTML技巧',
+                        link: '/experience/devSkills/html'
+                    }, {
                         text: 'CSS技巧',
-                        link: '/index/'
+                        link: '/experience/devSkills/css'
                     }, {
                         text: 'JS技巧',
-                        link: '/index/'
+                        link: '/experience/devSkills/js'
                     }]
                 }, {
                     text: '面试',
                     items: [{
                         text: '技术篇',
-                        link: '/index/'
+                        link: '/experience/interview/skill'
                     }, {
                         text: '项目篇',
-                        link: '/index/'
+                        link: '/experience/interview/project'
+                    }, {
+                        text: '前端未来',
+                        link: '/experience/interview/future'
                     }]
+                }]
+            },
+            {
+                text: 'More',
+                items: [{
+                    text: '正则',
+                    link: '/index/'
                 }]
             },
             {
