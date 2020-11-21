@@ -70,10 +70,10 @@ module.exports = {
             {
                 text: '其他',
                 items: [{
-                    text: '网络',
-                    link: '/index/'
-                }, {
                     text: '浏览器',
+                    link: '/other/browser'
+                }, {
+                    text: '网络',
                     link: '/index/'
                 }, {
                     text: '工程化',
