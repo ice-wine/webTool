@@ -178,7 +178,6 @@ module.exports = {
         ],
         // 添加侧边栏
         sidebar: 'auto',
-        sidebarDepth: 1,
         lastUpdated: '最近更新',
     }
 }
