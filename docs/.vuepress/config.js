@@ -134,16 +134,34 @@ module.exports = {
                         link: '/experience/devSkills/js'
                     }]
                 }, {
-                    text: '面试',
+                    text: '面试技术',
                     items: [{
-                        text: '技术篇',
+                        text: '技术相关',
                         link: '/experience/interview/skill'
                     }, {
-                        text: '项目篇',
+                        text: '项目相关',
                         link: '/experience/interview/project'
                     }, {
                         text: '前端未来',
                         link: '/experience/interview/future'
+                    }]
+                }, {
+                    text: '面试题',
+                    items: [{
+                        text: 'CSS',
+                        link: '/'
+                    }, {
+                        text: 'JS',
+                        link: '/'
+                    }, {
+                        text: 'Vue',
+                        link: '/'
+                    }, {
+                        text: 'React',
+                        link: '/'
+                    }, {
+                        text: '综合',
+                        link: '/'
                     }]
                 }]
             },
