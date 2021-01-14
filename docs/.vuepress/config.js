@@ -70,11 +70,11 @@ module.exports = {
             {
                 text: '其他',
                 items: [{
+                    text: '网络',
+                    link: '/other/network'
+                }, {
                     text: '浏览器',
                     link: '/other/browser'
-                }, {
-                    text: '网络',
-                    link: '/index/'
                 }, {
                     text: '工程化',
                     link: '/index/'
@@ -149,19 +149,19 @@ module.exports = {
                     text: '面试题',
                     items: [{
                         text: 'CSS',
-                        link: '/'
+                        link: '/experience/case/css'
                     }, {
                         text: 'JS',
-                        link: '/'
+                        link: '/experience/case/js'
                     }, {
                         text: 'Vue',
-                        link: '/'
+                        link: '/experience/case/vue'
                     }, {
                         text: 'React',
-                        link: '/'
+                        link: '/experience/case/react'
                     }, {
                         text: '综合',
-                        link: '/'
+                        link: '/experience/case/all'
                     }]
                 }]
             },
@@ -184,10 +184,6 @@ module.exports = {
                     text: 'Chrome',
                     link: '/tools/chrome'
                 }]
-            },
-            {
-                text: '更新',
-                link: '/update/'
             },
             {
                 text: 'Github',
