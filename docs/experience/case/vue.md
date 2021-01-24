@@ -2,9 +2,13 @@
 
 基本 -> 原理 -> 源码
 
-## MVVM
+## MVVM 设计模式
 
-viewModel
+Model：模型 -> 数据存储
+
+View：视图 -> 页面展示
+
+ViewModel：业务处理，处理完数据给视图（双向绑定）
 
 ## vue特点
 

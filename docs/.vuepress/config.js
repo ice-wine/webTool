@@ -77,7 +77,7 @@ module.exports = {
                     link: '/other/browser'
                 }, {
                     text: '工程化',
-                    link: '/index/'
+                    link: '/other/build'
                 }, {
                     text: '前端优化',
                     items: [{
