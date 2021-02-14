@@ -34,6 +34,24 @@ module.exports = {
                         text: 'TS',
                         link: '/advanced/js/ts'
                     }]
+                }, {
+                    text: '算法',
+                    items: [{
+                        text: '基础',
+                        link: '/advanced/algorithm/base'
+                    },{
+                        text: '进阶',
+                        link: '/advanced/algorithm/advance'
+                    }, {
+                        text: '前端',
+                        link: '/advanced/algorithm/web'
+                    }]
+                }, {
+                    text: '源码',
+                    items: [{
+                        text: 'Vue',
+                        link: '/advanced/sourcecode/vue'
+                    }]
                 }]
             },
             {
@@ -144,6 +162,9 @@ module.exports = {
                     }, {
                         text: '前端未来',
                         link: '/experience/interview/future'
+                    }, {
+                        text: '其他',
+                        link: '/experience/interview/other'
                     }]
                 }, {
                     text: '面试题',
