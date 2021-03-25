@@ -35,22 +35,13 @@ module.exports = {
                         link: '/advanced/js/ts'
                     }]
                 }, {
-                    text: '算法',
-                    items: [{
-                        text: '基础',
-                        link: '/advanced/algorithm/base'
-                    },{
-                        text: '进阶',
-                        link: '/advanced/algorithm/advance'
-                    }, {
-                        text: '前端',
-                        link: '/advanced/algorithm/web'
-                    }]
-                }, {
                     text: '源码',
                     items: [{
                         text: 'Vue',
                         link: '/advanced/sourcecode/vue'
+                    }, {
+                        text: 'React',
+                        link: '/'
                     }]
                 }]
             },
@@ -72,6 +63,9 @@ module.exports = {
                     text: '微信小程序',
                     link: '/frame/wechatApp'
                 }, {
+                    text: 'Hybrid APP',
+                    link: '/'
+                }, {
                     text: 'UI相关',
                     items: [{
                         text: 'Element-ui',
@@ -83,6 +77,19 @@ module.exports = {
                         text: 'AntD',
                         link: '/frame/ui/antd'
                     }]
+                }]
+            },
+            {
+                text: '算法',
+                items: [{
+                    text: '基础',
+                    link: '/advanced/algorithm/base'
+                }, {
+                    text: '进阶',
+                    link: '/advanced/algorithm/advance'
+                }, {
+                    text: '前端',
+                    link: '/advanced/algorithm/web'
                 }]
             },
             {
@@ -142,22 +149,22 @@ module.exports = {
                 items: [{
                     text: '开发技巧',
                     items: [{
-                        text: 'HTML技巧',
+                        text: 'HTML',
                         link: '/experience/devSkills/html'
                     }, {
-                        text: 'CSS技巧',
+                        text: 'CSS',
                         link: '/experience/devSkills/css'
                     }, {
-                        text: 'JS技巧',
+                        text: 'JS',
                         link: '/experience/devSkills/js'
                     }]
                 }, {
                     text: '面试技术',
                     items: [{
-                        text: '技术相关',
+                        text: '技术',
                         link: '/experience/interview/skill'
                     }, {
-                        text: '项目相关',
+                        text: '项目',
                         link: '/experience/interview/project'
                     }, {
                         text: '前端未来',
@@ -213,6 +220,5 @@ module.exports = {
         ],
         // 添加侧边栏
         sidebar: 'auto',
-        lastUpdated: '最近更新',
     }
 }
