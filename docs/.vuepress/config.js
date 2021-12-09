@@ -33,6 +33,9 @@ module.exports = {
 					}, {
 						text: 'TS',
 						link: '/advanced/js/ts'
+					}, {
+						text: 'API',
+						link: '/advanced/js/api'
 					}]
 				}, {
 					text: '源码',
