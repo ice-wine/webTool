@@ -164,6 +164,9 @@ module.exports = {
 					}, {
 						text: 'JS',
 						link: '/experience/devSkills/js'
+					}, {
+						text: '对象处理',
+						link: '/experience/devSkills/object'
 					}]
 				}, {
 					text: '面试技术',
