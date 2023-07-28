@@ -1,5 +1,14 @@
 # 对象
 
+## 空对象
+
+```js
+const isEmpty = (obj) =>
+  Reflect.ownKeys(obj).length === 0 && obj.constructor === Object;
+isEmpty({}); // true
+isEmpty({ a: "not empty" }); //false
+```
+
 ## 排序
 
 ### 字符串
@@ -89,18 +98,6 @@ array.filter(Boolean);
 // 输出 [3, 6, 7]
 ```
 
-## 统计
-
-## 交换
-
-```js
-let a = 5;
-let b = 8;
-[a, b] = [b, a];
-
-// 输出  [8, 5]
-```
-
 ## 属性
 
 ```js
@@ -113,4 +110,17 @@ Object.keys(obj);
 
 Object.values(obj);
 // [1, 2, 3]
+```
+
+## 解构
+
+### 处理部分入参
+
+```js
+handleParams() {
+  const { startDate, endDate, price, ...params } = this.formItem;
+  params.startDate = startDate.format("YYYY-MM-DD");
+  params.endDate = endDate.format("YYYY-MM-DD");
+  params.price = price.toString();
+}
 ```
