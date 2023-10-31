@@ -114,6 +114,8 @@ Object.values(obj);
 
 ## 解构
 
+tips：解构赋值的规则是，只要等号右边的值不是对象或数组，就先将其转为对象。由于 undefined 、null 无法转为对象，所以对它们进行解构赋值时都会报错。
+
 ### 处理部分入参
 
 ```js
@@ -122,5 +124,31 @@ handleParams() {
   params.startDate = startDate.format("YYYY-MM-DD");
   params.endDate = endDate.format("YYYY-MM-DD");
   params.price = price.toString();
+}
+```
+
+
+### 默认值
+
+```js
+const App = (props) => {
+  const { data } = props || {};
+  const { name, age } = data || {};
+}
+```
+
+## 数组对象异常处理
+
+```js
+const App = (props) => {
+  const { data } = props || {};
+  let infoList = [];
+  // 数组的方法只能用真数组调用
+  if (Array.isArray(data)) {
+    infoList = data.map(item => {
+      const { name, age } = item || {}; // 如果使用：? 可选链操作符，滥用会导致编辑后的代码大小增大 即：item?.name 会被编译成 item === null || item === void 0 ? void 0 : item.name
+      return `我的名字是${name},今年${age}岁了`;
+    });
+  }
 }
 ```

@@ -279,6 +279,10 @@ module.exports = {
             link: "/experience/devSkills/object",
           },
           {
+            text: "Vue2",
+            link: "/experience/devSkills/vue2",
+          },
+          {
             text: "其他",
             link: "/experience/devSkills/other",
           }
