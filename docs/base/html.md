@@ -1,100 +1,163 @@
 # HTML
 
-## 概念
+## SEO
 
-- HTML 全称为 HyperText Markup Language，译为**超文本标记语言**
-- 是描述性的标记语言，负责描述文档语义
+优化 **代码**、**结构**、**标签**、**内容** 等，提高网站在搜索引擎中的排名，提高用户可见度和流量。
 
-#### 超文本
+- Title、Description、Keywords：强调重点，概括内容，重要关键词。
 
-- 图片、音频、视频、动画、多媒体等内容为超文本，因为超出了文本的限制
+- `语义化` HTML 使用；图片 添加 `alt` 属性；减少 `iframe` 使用；提高网站加载速度。
 
-- 可从一个文件跳转到另一个文件，与世界各地主机的文件进行连接。即：超级链接文本
+## 浏览器内核
 
-**标记语言**
+浏览器内核是浏览器的核心组件，负责解释HTML、CSS和JavaScript代码，并将其呈现在用户的屏幕上。
 
-- HTML标签。比如：标签`<a>`表示超链接、标签`<img>`表示图片等等。网页是由网页元素组成的，这些元素是由 HTML标签描述出来，通过浏览器解析，显示给用户看
+- 组成
 
-- 编程语言是有编译过程，标记语言没有，HTML标签直接由浏览器解析执行
+  - **渲染引擎**：解析HTML和CSS，生成可视化页面。
+  - **JavaScript引擎**：解析和执行JavaScript代码。
 
-**HTML5完整的骨架**
+- 主要内核
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--移动端不要缩小显示:<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  -->
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="Author" content="">
-    <meta name="Keywords" content="网址关键词" />
-    <meta name="Description" content="网站描述SEO" />
-    <title>Document</title>
-</head>
-<body>
-    正文
-</body>
-</html>
-```
-## 元素
+  - WebKit：Safari等
+  - Blink：Chrome、Opera等
+  - Gecko：Firefox
+  - Trident：IE，Edge
 
-### 常见元素
+- 功能
 
-**主根元素**
+  - 解析与渲染：将网页代码转换为可视化的页面。
+  - 执行脚本：运行JavaScript代码，实现动态功能。
+  - 资源管理：管理缓存和网络请求。
 
-`html`：表示一个HTML文档的根（顶级元素）
+- 兼容性和性能
 
-**文档元数据**(head区域)
+  - 不同内核有不同的标准支持程度、速度和特性实现。
+  - 影响浏览器的性能和兼容性。
 
-`meta、title、style、link、script、base等`
+## 浏览器解析URL
 
-base标签：用于指定基础的路径。指定之后，所有的 a 链接都是以这个路径为基准
+1. `浏览器`接收URL至发起网络请求：涵盖浏览器机制、进程与线程管理。
 
-**分区根元素**(body区域)
+2. `网络请求`至HTTP请求完成：涉及DNS解析、TCP/IP协议栈。
 
-`div、section、article、aside、header、footer、p、span、em、strong等`
+3. `服务器`接收请求至后端处理：包括负载均衡、安全检查。
 
-### 元素分类
+4. 前后端`HTTP`交互：探讨HTTP头、状态码、Cookie及编码解码，如`gzip`压缩。
 
-**样式分区**
+5. HTTP`缓存机制`：讲解缓存头、ETag、Cache-Control。
 
-- 块级元素
+6. HTTP`响应解析`：HTML解析、DOM构建、`render`树、样式计算、布局与渲染。
 
-- 行内元素
+7. `CSS`可视化格式化模型：理解元素渲染规则、BFC等。
 
-- inline-block：如form表单元素。对外表现：行内元素（不会独占一行），对内表现：块级元素（可以设置宽高）
+8. `JavaScript`执行过程：解析、执行环境、内存管理。
 
-- 空(void)元素：没有子级节点和内容，没有闭合标签。如：br、hr、img、input、link、meta、area、base
+9. 其他扩展：如跨域处理、Web安全、Hybrid应用开发。
 
-- 置换元素（可替换元素）：CSS 可影响元素位置，但不会影响到元素自身内容。img，video，iframe
+## HTTP请求
 
-**内容分区**
+- `GET`：获取服务器的资源；幂等：多次请求返回相同结果；参数传递：通过URL查询字符串
 
-页眉，页脚，标题，侧边栏，段落等
+- `POST`：提交数据到服务器；不幂等：多次请求可能产生不同结果；参数：放在请求体中
 
-### 嵌套关系
+- `PUT`：更新服务器上的资源；幂等：多次请求产生相同结果；指定资源位置；参数：放在请求体中
 
-- 块级可包含行内
+- `HEAD`：请求页面的头部信息，只获取关于资源的信息，例如文件大小、类型、最后修改日期等，而不会获取实际内容。
 
-- 块级不一定能包含块级。比如 div 中可以包含 div，但 p 标签中不能包含 div
+- `DELETE`：删除服务器上的资源
 
-- 行内一般不能包含块级。比如 span 中不能包含 div。但有个特例：在 HTML5 中， a 标签中可以包含 div
+- `OPTIONS`：用于获取当前`URL`所支持的方法。请求成功，会有一个`Allow`的头包含类似`GET,POST`这样的信息
 
-## HTML5
-### 新增特性
+- `TRACE`：激发远程请求消息回路，用于测试从客户端到服务器的路径
 
-- 语义化标签：figure、footer、header、aside、time，良好的HTML结构，易维护，机器（搜索引擎、读屏软件等）易理解结构，有助于SEO
+- `CONNECT`：建立隧道连接，允许客户端通过代理服务器与目标服务器建立一个直接的 TCP 连接，从而绕过代理服务器的限制，例如防火墙或内容过滤
 
-- 表单控件：date、time、email、url、search
+## HTTP状态码
 
-- 功能标签：canvas、video、audio
+由三位数字组成的编码，用于指示客户端或中间代理与服务器交互的结果。根据它们的第一个数字，这些状态码被分成五个类别
 
-- 本地离线存储：localStorage(长期有效)，sessionStorage(浏览器关闭失效)
+- `1xx: 信息性`状态码
 
-- 位置API：Geolocation
+  - 100 Continue: 继续发送请求。
+  - 101 Switching Protocols: 切换协议。
 
-- 拖拽API：drag、drop
+- `2xx: 成功`状态码
 
-- History API：允许对浏览器历史记录进行操作，交互加载新信息的页面尤其有用
+  - 200 OK: 请求成功。
+  - 201 Created: 资源已创建。
+  - 202 Accepted: 请求已接受，但未处理。
+  - 204 No Content: 请求成功，但无内容。
+  - 206 Partial Content: 返回部分内容。
 
+- `3xx: 重定向`状态码
+
+  - 301 Moved Permanently: 永久重定向。
+  - 302 Found: 临时重定向。
+  - 303 See Other: 使用GET请求其他资源。
+  - 304 Not Modified: 资源未修改。
+  - 307 Temporary Redirect: 临时重定向。
+  - 308 Permanent Redirect: 永久重定向。
+
+- `4xx: 客户端错误`状态码
+
+  - 400 Bad Request: 错误请求。
+  - 401 Unauthorized: 未授权。
+  - 403 Forbidden: 禁止访问。
+  - 404 Not Found: 资源未找到。
+  - 405 Method Not Allowed: 方法不允许。
+
+- `5xx: 服务器错误`状态码
+
+  - 500 Internal Server Error: 内部服务器错误。
+  - 501 Not Implemented: 未实现。
+  - 502 Bad Gateway: 错误网关。
+  - 503 Service Unavailable: 服务不可用。
+  - 504 Gateway Timeout: 网关超时。
+
+## 前端性能优化
+
+- **减少HTTP请求**：合并CSS和JS文件；使用Sprite图合并小图标。
+
+- **压缩资源**：压缩CSS和JS代码；服务器上启用GZIP压缩。
+
+- **缓存优化**：设置`Expires`头控制缓存；使用CDN加速静态资源。
+
+- **代码优化**：减少DOM操作；预加载和延迟加载非关键资源。
+
+- **代码分割**：按需加载，使用Webpack等工具进行代码分割；动态导入，使用`import()`动态导入模块。
+
+- **第三方库优化**：按需引入；版本控制，使用CDN并指定稳定版本，减少不必要的更新。
+
+
+## cookies，sessionStorage 和 localStorage
+
+- **数据传输**：c-在每个HTTP请求中都发送；s、l-保存在客户端，不会发给服务器。
+
+- **存储大小**：c-约4KB，s、l-约为5MB。
+
+- **数据有效期**：c-可设置过期时间，若无则会话结束时失效；s-浏览器窗口关闭；l-永久保存，除非用户删除或清缓存
+
+- **作用域**：s-同一窗口或标签页中共享，c、l-所有同源窗口中共享。（同源：URL的协议（如http或https）、域名（如www.example.com）和端口（如80或443）都相同）
+
+- **安全性**：c-敏感，发送，s、l-本地，不发送。
+
+## 行内/块级/空元素
+
+- **行内元素**：不独占一行，与其他行内元素在同一行显示；`<a>`, `<span>`, `<img>`, `<input>`, `<button>`
+
+- **块级元素有**：独占一行，可以设置宽度和高度；`<div>`, `<p>`, `<ul>`, `<ol>`, `<table>`
+
+- **空元素**：不能包含子元素，通常只有开始标签； `<br>`, `<hr>`, `<img>`, `<input>`
+
+## Canvas和SVG
+
+- **Canvas**：是一个HTML5元素
+  - **特点**： 基于像素的绘图方式，放大时会失真或锯齿。
+  - **用途**： 动态绘制图形，如游戏、动画等。
+  - **API**： 使用JavaScript API进行绘图，不支持事件绑定，需要通过监听鼠标、键盘等事件来实现交互。
+
+- **SVG**：是一种基于XML的矢量图形格式
+  - **特点**： 基于矢量图形的绘图方式，可自由缩放和变换，不失真。
+  - **用途**： 绘制复杂的图形和图标。
+  - **语法**： 使用XML语法，支持事件绑定，可以方便地为图形元素添加交互行为。

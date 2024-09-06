@@ -1,5 +1,5 @@
 module.exports = {
-  title: "web",
+  title: "",
   themeConfig: {
     nav: [
       {
@@ -7,7 +7,7 @@ module.exports = {
         items: [
           {
             text: "HTML",
-            link: "/base/html",
+            link: "/base/html"
           },
           {
             text: "CSS",
@@ -66,6 +66,14 @@ module.exports = {
             ],
           },
         ],
+      },
+      {
+        text: "高频",
+        link: "",
+      },
+      {
+        text: "原理",
+        link: "",
       },
       {
         text: "库&框架",
@@ -302,6 +310,10 @@ module.exports = {
           {
             text: "Chrome",
             link: "/tools/chrome",
+          },
+          {
+            text: "MD",
+            link: "https://commonmark.org/help/"
           },
         ],
       },
