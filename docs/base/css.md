@@ -1,179 +1,99 @@
 # CSS
 
-## 概念
+## css sprite CSS精灵
 
-CSS：Cascading Style Sheet，层叠样式表。给 HTML 页面标签添加各种样式，定义网页的显示效果。CSS 将网页内容和显示样式进行分离，提高了显示功能。
+将多个小图标**合并**成一张大图片，在 CSS 中设置背景图像，并通过调整**background-position**显示不同图标部分。
 
-## 单位
+- 优点：减少 HTTP 请求次数，提高加载速度；便于维护图像资源。
 
-**绝对单位**
+- 缺点：修改单个图标需重做整张图；高清设备需额外处理分辨率。
 
-1 in(英寸) = 2.54 cm(厘米) = 25.4 mm(毫米) = 72 pt(点) = 6pc(皮卡)
+## display: none 与 visibility: hidden
 
-**相对单位**
+均可使元素不可见，但在**渲染位置**、对**子孙节点**的影响及**性能**方面有差异
 
-px：像素
+- display: none
 
-em：印刷单位相当于12个点
+    - 元素消失，不占空间。
+    - 非继承属性，子孙节点消失。
+    - 修改会导致重排。
+    - 读屏器不读取内容。
 
-%：百分比，相对周围的文字的大小
+- visibility: hidden
 
-## 属性
-### 非布局样式
+    - 元素可见但透明，占空间。
+    - 继承属性，可通过 visibility: visible; 显示子孙节点。
+    - 修改仅导致重绘。
+    - 读屏器读取内容。
 
-字体、行高、颜色、大小、背景、边框、滚动、换行、装饰性属性（粗体、斜体、下划线）等。
+## link 与 @import
 
-### 定位属性
-## 样式表
+link 标签在**性能、兼容性和灵活性**方面优于 @import
 
-CSS 和 HTML 的结合方式
+- link 标签
+    - HTML 方式，用于引入外部 CSS 文件。
+    - 支持并行下载，提高加载速度。
+    - 可以指定候选样式表（rel="alternate stylesheet"）。
+    - 浏览器支持更早，兼容性更好。
+    - 可放置在文档的任何位置。
 
-- 行内：标签内使用`style`属性
+- @import
+    - CSS 方式，用于引入其他 CSS 文件。
+    - 串行下载，可能导致 FOUC（Flash of Unstyled Content） 问题。
+    - 不支持候选样式表。
+    - 必须在样式规则之前且只能在文件顶部使用。
 
-- 内嵌：页面使用`<style>`标签
+## FOUC（Flash Of Unstyled Content）
+ 
+外部样式表（CSS）加载较慢或延迟，导致页面先以无样式的方式显示，然后突然闪烁出样式。
 
-- 外部：引入 1.`<link>`标签 2.import
+通过优化**样式加载顺序、使用内联样式、预加载和合理使用媒体查询**，有效避免 FOUC，提升用户体验。
 
-## 选择器
+- 样式表放在 `<head>` 中
 
-指CSS要作用的标签
+- 使用内联样式 `style`
 
-### 基本选择器
+- 样式预加载 `<link rel="preload">`
 
-- 标签：所有标签
+- 减少样式表数量和文件大小，优化样式结构和规则
 
-- ID：#
+- 使用媒体查询，在适当条件下加载特定样式，避免不必要的加载
 
-- 类：.
+## 清除浮动
 
-- 通用：*
+- 父级 `div` 定义 `height`
 
-### 高级选择器
+- 结尾处加空 `div` 标签 `clear:both`
 
-- 后代
+- 父级 `div` 定义伪类 `:after` 和 `zoom`
 
-- 交集
+- 父级 `div` 定义 `overflow:hidden`
 
-- 并集
+- 父级 `div` 也浮动，需要定义宽度
 
-- 伪类：同一个标签，根据其不同的种状态，有不同的样式。
+- 结尾处加 `br` 标签 `clear:both`
 
-  - 静态伪类：适用于超链接。:link、:visited
+- 使用 `clearfix` 类
 
-  - 动态伪类：适用于所有标签。:hover、:active、:focus
+## 手动写动画 最小时间间隔
 
-## 层叠性
+将时间间隔设为 16.7ms 可保证平滑动画效果，并适应大多数显示器的刷新频率。（多数显示器默认频率为 60Hz，即 1 秒刷新 60 次，最小间隔为 16.7ms）
 
-- 行级样式 > 内嵌样式表 > 外部样式表（就近原则）
 
-- ID选择器 > 类选择器 > 标签选择器
+## stylus/sass/less
 
-- !important标记：优先级最高
+常用的 CSS 预处理器，它们功能上大致相似，在**语法和细节**上有一些区别，取决于个人偏好、团队需求和项目要求
 
-<img :src="$withBase('/imgs/css-extend.png')" alt="css-extend" >
+- 语法风格。Sass 使用 Ruby 风格的缩进；Less 和 Stylus 采用更接近 CSS 的语法，使用 {} 表示嵌套。
 
-## 盒模型
+- 变量。均支持变量。Sass 和 Less 用 $，Stylus 可用 $ 或 @。
 
-<img :src="$withBase('/imgs/css-box.png')" alt="css-box" style="width:500px">
+- 混合(Mixins)。Sass 和 Less 通过 @mixin 定义；Stylus 使用 mixin 关键字。
 
-## 定位
+- 嵌套。三者均支持，Sass 依赖缩进，Less 和 Stylus 用 {}。
 
-### 清除浮动
+- 继承。Sass 使用 @extend；Less 和 Stylus 则利用 & 符号。
 
-1. 加高法； 给浮动元素的祖先元素加高度。浮动在一个有高度的盒子中，那么这个浮动就不会影响后面的浮动元素。
+- 颜色混合。Sass: mix() 函数；Less: blend() 函数；Stylus: 同样是 mix() 函数。
 
-2. clear:both；不允许左侧和右侧有浮动对象(致命的问题，所在的标签的margin属性会失效)
-
-3. 隔墙法；两部分浮动元素中间，建一个墙，隔开两部分浮动
-
-4. overflow:hidden；隐藏掉溢出边框的内容
-
-## CSS3
-
-- **过渡 transition** ：transition: all 3s linear 0s; 所有的属性 - 持续时间 - 运动曲线 - 过渡延迟
-
-- **2D 转换 transform** ：缩放scale(水平, 垂直)、位移translate(水平, 垂直)、旋转rotate(角度)、变形
-
-- **3D 转换 transform** ：旋转rotateX,...Y,...Z、移动translateX,..Y,...Z、透视perspective、3D呈现（transform-style）
-
-- **动画animation**
-
-```css
-定义动画：
-    @keyframes 动画名{
-        from{ 初始状态 }
-        to{ 结束状态 }
-    }
-
-调用：
-animation:定义的动画名称  持续时间  执行次数(steps():非连续执行，适用于如时钟)  是否反向  运动曲线 延迟执行。(infinite 表示无限次)
-```
-
-## 布局
-
-### 常见布局
-
-- table 表格布局：早期使用的布局，如今用得很少。
-
-- float 浮动 + margin：为了兼容低版本的IE浏览器，很多网站（比如腾讯新闻、网易新闻、淘宝等）都会采用 float 布局。
-
-- inline-block 布局：对外的表现是行内元素（不会独占一行），对内的表现是块级元素（可以设置宽高）。
-
-- flex 布局：为布局而生，非常灵活，是最为推荐的布局写法。
-
-### 水平垂直居中
-
-1. **行内元素**（文字、图片等）
-
-    ```css
-    .father {
-        text-align: center;
-        height: 20px;
-        line-height: 20px;
-    }
-    ```
-
-2. **块级元素**
-
-    tips：水平居中 margin: auto 
-
-- 绝对定位 + margin（需要指定子元素的宽高，不推荐）
-
-- 绝对定位 + translate（无需指定子元素的宽高，推荐）
-
-    ```css
-    .father{
-            position: relative;
-            min-height: 500px;
-    }
-    .son {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    ```
-
-- flex 布局
-
-    ```css
-    .father{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    ```
-
-- flex 布局 + margin: auto
-
-    ```css
-    .father{
-        display: flex;
-    }
-    .son {
-        margin: auto;
-        background: red;
-    }
-    ```
-
-## 兼容
+- 环境与工具。Sass 需 Ruby 环境编译；Less 和 Stylus 可通过 Node.js/NPM 编译。
