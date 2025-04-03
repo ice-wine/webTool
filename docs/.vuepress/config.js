@@ -6,6 +6,14 @@ module.exports = {
         text: "基础",
         items: [
           {
+            text: "浏览器",
+            link: "/base/browser",
+          },
+          {
+            text: "网络",
+            link: "/base/network",
+          },
+          {
             text: "HTML",
             link: "/base/html"
           },
@@ -142,12 +150,14 @@ module.exports = {
         text: "其他",
         items: [
           {
-            text: "网络",
-            link: "/other/network",
-          },
-          {
-            text: "浏览器",
-            link: "/other/browser",
+            text: "设计",
+            link: "/other/design",
+            items: [
+              {
+                text: "设计模式",
+                link: "/other/patterns",
+              },
+            ],
           },
           {
             text: "工程化",
